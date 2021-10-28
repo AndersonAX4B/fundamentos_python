@@ -7,7 +7,7 @@ any() -> Retorna True se qualquer elemento do iterável for verdadeiro. Se o ite
 """
 
 # Exemplo all()
-print(all([0, 1, 2, 3, 4, 5]))  # Lista
+print(all([0, 1, 2, 3]))  # Lista
 print(all((1, 2, 3, 4, 5)))  # Tupla
 print(all({1, 2, 3, 4, 5}))  # Set (conjunto)
 print(all('1, 2, 3, 4, 5'))  # String

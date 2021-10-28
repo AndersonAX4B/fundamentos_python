@@ -30,7 +30,7 @@ def conta_ate(max_value):
         contador = contador + 1
 
 
-# Obs.: Um Generator Funciton não é um Generator. Ela gera um generator
+# Obs.: Um Generator Function não é um Generator. Ela gera um generator
 
 gen = conta_ate(5)
 

@@ -19,7 +19,7 @@ def funcao(x, y):
 Assim como map() e filter(), a função reduce() recebe dois parâmetros: a função e o iterável.
 
 reduce(funcao, dados)
-
+[1,2,3,4]
 A função reduce(), funciona da seguinte forma:
    Passo 1: res1 = f(a1, a2) # Aplica a função nos dois primeiros elementos da coleção e guarda o resultado.
    Passo 2: res2 = f(res1, a3) # Aplica a função passando o resultado do passo1 mais o terceiro elemento e guarda o res.
@@ -48,7 +48,7 @@ from functools import reduce
 dados = [2, 3, 4, 5]
 
 # Para utilizar o reduce() nós precisamos de uma função que receba dois parâmetros, diferente de map() e filter()
-res = reduce(lambda x, y: x * y, dados)
+res = reduce(lambda acc, nv: acc * nv, dados)
 print(res)
 
 # Utilizando um loop normal
@@ -57,3 +57,60 @@ for n in dados:
     res = res * n
 
 print(res)
+
+usuarios = [{
+    "id": 1,
+    "last_name": "Exall",
+    "amount": 644.04
+}, {
+    "id": 2,
+    "last_name": "Knatt",
+    "amount": 1005.28
+}, {
+    "id": 3,
+    "last_name": "Farthin",
+    "amount": 710.99
+}, {
+    "id": 4,
+    "last_name": "Wrathmall",
+    "amount": 248.8
+}, {
+    "id": 5,
+    "last_name": "Bleasdille",
+    "amount": 488.62
+}, {
+    "id": 6,
+    "last_name": "Bigly",
+    "amount": 774.7
+}, {
+    "id": 7,
+    "last_name": "Lemmon",
+    "amount": 983.87
+}, {
+    "id": 8,
+    "last_name": "Savege"
+}, {
+    "id": 9,
+    "last_name": "MacDonell"
+}, {
+    "id": 10,
+    "last_name": "Purchall"
+}]
+
+# another_value = reduce(lambda acc, nv: {'amount': acc['amount'] + nv['amount']}, usuarios)
+# print(another_value)
+
+# another_value = reduce(lambda acc, nv: acc + nv['amount'], usuarios, 0)
+
+
+# print(another_value)
+
+another_value = reduce(lambda acc, nv: {'amount': acc['amount'] + nv['amount']},
+                       [user for user in usuarios if 'amount' in user])
+
+another_value = reduce(lambda acc, nv: {'amount': acc['amount'] + nv['amount'] if 'amount' in nv else 0}, usuarios)
+
+another_value = reduce(lambda acc, nv: {'amount': acc['amount'] + nv['amount']},
+                       filter(lambda user: 'amount' in user, usuarios))
+another_value = reduce(lambda acc, nv: acc + nv.get('amount', 0), usuarios, 0)
+print(another_value)
