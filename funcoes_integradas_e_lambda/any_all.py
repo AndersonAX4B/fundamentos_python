@@ -37,3 +37,6 @@ print('\n')
 
 print(all([0, 0, 0, 0, 145, 0, 0]))
 print(any([0, 5, 0, 144, 55, 0, 0]))
+
+teste = 'Aqui'
+print("A variável " + teste + " é isso")
