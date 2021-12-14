@@ -17,9 +17,10 @@ zip1 = zip(lista1, lista2, lista3)
 print(zip1)
 print(list(zip1))  # Após usado, ele limpará o espaço de memória
 print(type(zip1))
+print(list(zip1))
 print('\n')
 
-# Podemos gerar um lista, tupla, set(conjuntos) ou dicts
+# Podemos gerar uma lista, tupla, set(conjuntos) ou dicts
 print(list(zip(lista1, lista2)))
 print(tuple(zip(lista1, lista2)))
 print(set(zip(lista1, lista2)))
@@ -44,7 +45,12 @@ print(list(zt))
 print('\n')
 
 # lista de tuplas
-dados = [(0, 1), (2, 3), (4, 5), (6, 7)]
+dados = [
+    (0, 1),
+    (2, 3),
+    (4, 5),
+    (6, 7)
+]
 print(*dados)
 print(list(zip(*dados)))
 print('\n')

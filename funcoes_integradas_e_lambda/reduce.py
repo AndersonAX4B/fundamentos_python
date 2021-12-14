@@ -88,13 +88,16 @@ usuarios = [{
     "amount": 983.87
 }, {
     "id": 8,
-    "last_name": "Savege"
+    "last_name": "Savege",
+    "amount": 583.87
 }, {
     "id": 9,
-    "last_name": "MacDonell"
+    "last_name": "MacDonell",
+    "amount": 183.87
 }, {
     "id": 10,
-    "last_name": "Purchall"
+    "last_name": "Purchall",
+    "amount": 5983.87
 }]
 
 # another_value = reduce(lambda acc, nv: {'amount': acc['amount'] + nv['amount']}, usuarios)
